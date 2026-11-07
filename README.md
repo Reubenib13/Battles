@@ -1,7 +1,4 @@
-# **Battles**  
-
-## Video Demo: 
-
+# Battles
 ## A Game of Guessing Dates  
 
 For my CS50 project I made a simple web based game inspired by games such as [Chronophoto](https://www.chronophoto.app/game.html) which will show you some information about a famous battle or conflict that occurred in Europe and have you guess when it happened. It allows users to create an account and play rounds of the game.
