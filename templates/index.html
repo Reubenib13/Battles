@@ -1,0 +1,54 @@
+{% extends "layout.html" %} {% block title %} Home {% endblock %} {% block main
+%}
+    <form action="/game" method="post">
+      <h2>Select your settings</h2>
+      <div class="d-flex justify-content-center align-items-center container ">
+      
+        <div class="input-group mt-3 text-center ">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="start">Start:</label>
+          </div>
+          <select class="custom-select" id="start" name="start">
+            <option value="bce">BCE</option>
+            <option value="ce1000">1000 ce</option>
+            <option value="ce1100">11th Century</option>
+            <option value="ce1200">12th Century</option>
+            <option value="ce1300">13th Century</option>
+            <option value="ce1400">14th Century</option>
+            <option value="ce1500">15th Century</option>
+            <option value="ce1600">16th Century</option>
+            <option value="ce1700">17th Century</option>
+            <option value="ce1800">18th Century</option>
+            <option value="ce1900">19th Century</option>
+            <option value="ce2000">20th Century</option>
+            <option value="ce2100">21th Century</option>
+          </select>
+        </div>
+
+        <div class="input-group mt-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="end">End:</label>
+          </div>
+          <select class="custom-select" id="end" name="end">
+            <option value="bce">BCE</option>
+            <option value="ce1000">1000 ce</option>
+            <option value="ce1100">11th Century</option>
+            <option value="ce1200">12th Century</option>
+            <option value="ce1300">13th Century</option>
+            <option value="ce1400">14th Century</option>
+            <option value="ce1500">15th Century</option>
+            <option value="ce1600">16th Century</option>
+            <option value="ce1700">17th Century</option>
+            <option value="ce1800">18th Century</option>
+            <option value="ce1900">19th Century</option>
+            <option value="ce2000">20th Century</option>
+            <option value="ce2100">21th Century</option>
+          </select>
+        </div>
+
+        <div>
+          <button class="btn btn-primary mt-3" type="submit">Enter Game!</button>
+        </div></div>
+    </form>
+
+{% endblock %}

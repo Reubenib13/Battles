@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Play
+{% endblock %}  
+
+{% block main %}
+<h2>Information</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Result</th>
+          {% if not info.belligerents == ([], []) %}
+            <th>Belligerents</th>
+          {% endif %}
+
+          {% if not info.strength == None %}
+            <th>Strength</th>
+          {% endif %}
+
+          {% if not info.casulties == None %}
+            <th>Casulties</th>
+          {% endif %}
+      </tr>
+  </thead>
+  <tbody>
+        <tr>
+          <td>{{ info.name }}</td>
+          <td>
+            <ul>
+            {% for i in info.location %}
+              <li>{{ i }}</li>
+            {% endfor %}</ul>
+          </td>
+          <td>
+            <ul>
+            {% for i in info.result %}
+              <li>{{ i }}</li>
+            {% endfor %}</ul>
+          </td>
+          {% if not info.belligerents == ([], []) %}
+            <td>
+              <table>
+                <tbody>
+                  <th> 
+                    <ul>
+                      {% for i in info.belligerents[0] %}
+                        <li>{{ i }}</li>
+                      {% endfor %}
+                    </ul> 
+                  </th>
+                  <th> 
+                    <ul>
+                      {% for i in info.belligerents[1] %}
+                        <li>{{ i }}</li>
+                      {% endfor %}
+                    </ul> 
+                  </th>
+                </tbody>
+              </table>
+            </td>
+          {% endif %}
+
+          {% if not info.strength is none %}
+            <td>{{ info.strength }}</td>
+          {% endif %}
+
+          {% if not info.casulties is none %}
+            <td>{{ info.casulties }}</td>
+          {% endif %}
+        </tr>
+  </tbody>
+</table>   
+<h2>When did it happen?</h2>
+<form action="/response" method="post">
+  <div class="slidecontainer">
+    <input type="range" min="{{ min }}" max="{{ max }}" class="slider" id="year" name="year">
+    <p>Value: <span id="demo"></span></p>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+
+<script>
+  console.log(document.title);
+  if (document.title == "Battles: Play") {
+    var slider = document.getElementById("year");
+    console.log(slider);
+    var output = document.getElementById("demo");
+    output.innerHTML = String(slider.value) + "{{ type }}"; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider.oninput = function() {
+      output.innerHTML = String(this.value) + " {{ type }}";
+  }}
+</script>
+{% endblock %}

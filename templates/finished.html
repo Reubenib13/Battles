@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Congratulations
+{% endblock %}  
+
+{% block main %}
+  <h1>Well Done! You achieved <span>{{ score }}%</span></h1>
+  <h2 class="mb-2">The correct answer was <span>{{ correct }}</span> and you guessed <span>{{ guessed }}</span></h2>
+  <form action="/again" method="post">
+    <button class="btn btn-primary mt-3" type="submit">Play agian</button>
+  </form>
+{% endblock %}
